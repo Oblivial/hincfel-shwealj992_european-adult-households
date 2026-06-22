@@ -8,16 +8,17 @@ def shweal_by_country_year(df: pd.DataFrame) -> pd.DataFrame:
     Parameter
     ---------
     df : pandas.DataFrame
-        WID-Datensatz eines Landes
+        WID-Dataset of a Country
 
     Returns
     -------
     pandas.DataFrame
-        Spalten:
+        Rows:
         - country
         - year
         - middle_class_share
     """
+    
     country = df.iloc[0]["country"]
 
     middle = df[

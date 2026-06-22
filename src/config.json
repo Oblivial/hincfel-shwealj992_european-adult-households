@@ -1,0 +1,5 @@
+{
+    "ess_folder": "data/raw/ess-Datafile-subset-socio-all-runs-all-countries",
+    "wid_folder": "data/raw/wid_all_data_2002_2024_europe",
+    "output_folder": "data/processed"
+}
