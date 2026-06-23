@@ -2,22 +2,22 @@ import json
 
 config = None
 
-def loadConfig():
+def load_config():
     global config
     with open("src/config.json", "r") as f:
         config = json.load(f)
 
-def getWIDFolderPath():
+def get_wid_folderpath():
     if not config:
-        loadConfig()
+        load_config()
     return config["wid_folder"]
 
-def getESSFolderPath():
+def get_ess_folderpath():
     if not config:
-        loadConfig()
+        load_config()
     return config["ess_folder"]
 
-def getOutputFolderPath():
+def get_output_folderpath():
     if not config:
-        loadConfig()
+        load_config()
     return config["output_folder"]
