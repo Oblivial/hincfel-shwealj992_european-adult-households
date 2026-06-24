@@ -21,3 +21,8 @@ def get_output_folderpath():
     if not config:
         load_config()
     return config["output_folder"]
+
+def get_ess_rounds():
+    if not config:
+        load_config()
+    return config["ess_round_dates"]

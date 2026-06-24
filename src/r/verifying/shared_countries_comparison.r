@@ -1,6 +1,10 @@
 source("src/r/util/locationutil.r")
 source("src/r/util/config.r")
 
+table_countries_compare <- function(start_year) {
+    
+}
+
 table_countries_compare_by_year <- function(start_year) {
   stfeco_path <- paste0(get_output_folderpath(), "/stfeco_by_country_year.csv")
   shweal_path <- paste0(get_output_folderpath(), "/shweal_by_country_year.csv")
@@ -16,8 +20,8 @@ table_countries_compare_by_year <- function(start_year) {
   shweal$year <- as.numeric(shweal$year)
   start_year <- as.numeric(start_year)
 
-  stfeco <- stfeco[stfeco$year > start_year, , drop = FALSE]
-  shweal <- shweal[shweal$year > start_year, , drop = FALSE]
+  stfeco <- stfeco[stfeco$year >= start_year, , drop = FALSE]
+  shweal <- shweal[shweal$year >= start_year, , drop = FALSE]
 
   # Restrict to European codes
   european_codes <- get_european_countrycodes_r()

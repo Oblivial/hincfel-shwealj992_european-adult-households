@@ -3,18 +3,18 @@
     "wid_folder": "data/raw/wid_all_data_2002_2024_europe",
     "output_folder": "data/processed",
     "output_folder_verification": "data/processed/verification",
-    "ess_round_dates": [
-        { "code": "ESS1", "date": "2002" },
-        { "code": "ESS2", "date": "2004" },
-        { "code": "ESS3", "date": "2006" },
-        { "code": "ESS4", "date": "2008" },
-        { "code": "ESS5", "date": "2010" },
-        { "code": "ESS6", "date": "2012" },
-        { "code": "ESS7", "date": "2014" },
-        { "code": "ESS8", "date": "2016" },
-        { "code": "ESS9", "date": "2018" },
-        { "code": "ESS10", "date": "2020" },
-        { "code": "ESS11", "date": "2023" },
-        { "code": "ESS12", "date": "2025" }
-    ]
+    "ess_round_dates": {
+        "ESS1": "2002",
+        "ESS2": "2004",
+        "ESS3": "2006",
+        "ESS4": "2008",
+        "ESS5": "2010",
+        "ESS6": "2012",
+        "ESS7": "2014",
+        "ESS8": "2016",
+        "ESS9": "2018",
+        "ESS10": "2020",
+        "ESS11": "2023",
+        "ESS12": "2025"
+    }
 }

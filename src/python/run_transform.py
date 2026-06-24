@@ -13,7 +13,24 @@ def main():
     
     # Process WID Data
     print(f"WID folder path: {wid_folder.resolve()}")
+    #dataframe_wid_target = run_shweal_transform(wid_folder)
+    # Save the resulting DataFrame to a CSV file
+    #dataframe_wid_target.to_csv(Path(target_folder / "shweal_by_country_year.csv"), index=False)
+  
+    # Process ESS Data
+    print(f"ESS folder path: {ess_folder.resolve()}")
+    dataframe_ess_target = run_stfeco_transform(ess_folder)
+    dataframe_ess_target.to_csv(Path(target_folder / "stfeco_by_country_year.csv"), index=False)
     
+    print ("Done!")
+
+def run_stfeco_transform(ess_folder):
+    dataframe_ess_target = pd.DataFrame()
+    dataframe_ess_target = stfeco_by_country_year(pd.read_csv(ess_folder / "Datafile-subset.csv"))
+
+    return dataframe_ess_target
+    
+def run_shweal_transform(wid_folder, onlyEuropean):
     dataframe_wid_target = pd.DataFrame()
     # Iterate through all countries' CSV files in the WID folder
     csv_files = list(wid_folder.glob("*.csv"))
@@ -32,16 +49,8 @@ def main():
                                               shweal_by_country_year(df)])
         else:
             print(f"Skipping file: {csv_filename}")
+            
+    return dataframe_wid_target
     
-    # Save the resulting DataFrame to a CSV file
-    dataframe_wid_target.to_csv(Path(target_folder / "shweal_by_country_year.csv"), index=False)
-  
-    # Process ESS Data
-    dataframe_ess_target = pd.DataFrame()
-    print(f"ESS folder path: {ess_folder.resolve()}")
-    dataframe_ess_target = stfeco_by_country_year(pd.read_csv(ess_folder / "Datafile-subset.csv"))
-    dataframe_ess_target.to_csv(Path(target_folder / "stfeco_by_country_year.csv"), index=False)
-    
-    print ("Done!")
-       
+
 main()

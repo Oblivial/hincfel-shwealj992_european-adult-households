@@ -31,3 +31,8 @@ get_output_folderpath_verification <- function() {
   if (is.null(config)) load_config()
   return(config$output_folder_verification)
 }
+
+get_ess_rounds <- function() {
+  if (is.null(config)) load_config()
+  return(config$ess_round_dates)
+}
